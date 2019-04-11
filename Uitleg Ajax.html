@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <div></div>
+
+    <button>hey</button>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $("div").load("inhoud.txt", function(){
+            // Dit is de enige plek waar je zeker bent dat inhoud.txt is ingeladen.
+            console.log("klaar!");
+            showOnScreen();
+        });
+
+        // Hier ben je niet zeker dat inhout.txt als is ingeladen
+        // Meer zelf de kans is heeeeeeel klein.
+        console.log($("div").html());
+
+        function showOnScreen(){
+            // Hier weet je het ook, want deze functie is aangeroepen uit de "klaar" functie.
+            console.log($("div").html());
+        }
+
+        // Makkelijke GET call
+        $.get("https://datatank.stad.gent/4/mobiliteit/bezettingparkingsrealtime.json", function(response){
+            data = response;
+            renderParkings();
+        });
+
+        // Iets minder makkelijke GET call
+        /*
+            $.ajax({
+                method:'GET',
+                url: 'https://datatank.stad.gent/4/mobiliteit/bezettingparkingsrealtime.json',
+                dataType: "json" //optioneel, standaard gaat hij zelf gaan gokken
+            }).done(response => {
+                data = response;
+                renderParkings();
+            });
+        */
+
+        
+
+
+    </script>
+</body>
+</html>

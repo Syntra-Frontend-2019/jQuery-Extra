@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    li.active {
+        color: red;
+    }
+    </style>
+</head>
+<body>
+
+    <ul id="content"></ul>
+
+    <h1>Test</h1>
+    <h1>Test</h1>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+        /*
+            $("h1").hide(); // show();
+
+            var heading = document.querySelectorAll("h1");
+            for (var i = 0; i < heading.length; i++) {
+                const element = heading[i];
+                element.style.display = "none"; 
+            }
+        */
+
+        /*
+            $("h1").remove();
+
+            var heading = document.querySelectorAll("h1");
+            for (var i = 0; i < heading.length; i++) {
+                const element = heading[i];
+                element.parentNode.removeChild(element);
+            }
+        */
+
+        //var button = document.querySelector("button");
+        //button.addEventListener("click", function(){});
+        
+        
+        /*
+            $("body").on("click", "button",function(){
+                $("h1").toggle();
+            });
+
+            $("button").click(function(){
+                $("h1").toggle();
+            });
+
+            $("#content").append("<button>Klik op mij</button>");
+        */
+
+        /*
+            var mijnArray = ["Appel", "Kiwi", "Banaan"];
+
+            for (var i = 0; i < mijnArray.length; i++) {
+                const element = mijnArray[i];
+                $("ul").append("<li>" + element + "</li>");
+            }  
+
+            for (var i = 0; i < mijnArray.length; i++) {
+                const element = mijnArray[i];
+                var list = document.querySelector("ul");
+                var newListItem = document.createElement("li");
+                newListItem.innerHTML = element;
+
+                list.appendChild(newListItem);
+            }
+        */
+
+        /*
+            var mijnArray = ["Appel", "Kiwi", "Banaan"];
+
+            for (var i = 0; i < mijnArray.length; i++) {
+                const element = mijnArray[i];
+                $("ul").append("<li>" + element + "<button data-id='" + i + "'>delete</button></li>");
+            } 
+
+            $("button").click(function(event){
+                console.log($(event.target).attr("data-id"));
+            }) 
+        */
+
+        /*
+            var mijnArray = ["Appel", "Kiwi", "Banaan"];
+
+            for (var i = 0; i < mijnArray.length; i++) {
+                const element = mijnArray[i];
+                //$("ul").append("<li>" + element + "<button data-id='" + i + "'>delete</button></li>");
+                $("ul").append(`
+                    <li class="item" id=''>
+                        ${element}
+                        <button data-id="${i}">delete</button>
+                    </li>
+                `);
+            } 
+
+            $("button").click(function(event){
+                console.log($(event.target).attr("data-id"));
+            });
+        */
+
+        var mijnArray = ["Appel", "Kiwi", "Banaan"];
+
+        for (var i = 0; i < mijnArray.length; i++) {
+            const element = mijnArray[i];
+            $("ul").append(`
+                <li>
+                    <div>
+                        ${element}
+                        <span><button>Highlight</button></span>
+                    </div>
+                </li>
+            `);
+        } 
+
+        $("button").click(function(event){
+            $(event.target).closest("li").toggleClass("active");
+            //$(event.target).parent().removeClass("active");
+            //$(event.target).parent().addClass("active");
+        });
+
+
+
+          
+
+        
+    </script>
+</body>
+</html>

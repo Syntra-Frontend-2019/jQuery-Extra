@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+.stijl1 {
+            background-color: tomato;
+        }
+
+        .stijl2 {
+            background-color: cadetblue;
+        }
+
+        .stijl3 {
+            background-color: hotpink;
+        }
+
+        div {
+            padding: 40px;
+            display: none;
+        }
+    
+    
+    </style>
+</head>
+<body>
+
+        <button class="stijl1">Button 1</button>
+        <button class="stijl2">Button 2</button>
+        <button class="stijl3">Button 3</button>
+
+        <div class="stijl1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam repellat autem quo similique ea est? Perferendis nemo dicta ullam porro ut quam qui vel error tempora, quod veniam iste a!</div>
+        <div class="stijl2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem corporis labore deleniti tempore in quod incidunt hic omnis? Ullam rerum inventore ad nihil modi qui perspiciatis porro vel vitae molestias?</div>
+        <div class="stijl3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem corporis labore deleniti tempore in quod incidunt hic omnis? Ullam rerum inventore ad nihil modi qui perspiciatis porro vel vitae molestias?</div>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam beatae similique, velit exercitationem possimus eveniet perferendis suscipit ab officia? Unde cum accusamus repellendus consequatur rerum sunt incidunt fugit eligendi iure!</p>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $("button").click(function(e){
+           var className = $(e.target).attr("class");
+           //$("div." + className).slideToggle();
+           $(`div.${className}`).slideToggle();
+        });
+    </script>
+</body>
+</html>
